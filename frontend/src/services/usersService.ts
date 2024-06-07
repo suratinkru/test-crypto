@@ -1,7 +1,7 @@
 import axios, { AxiosResponse } from "axios";
 
-const BASE_URL = process.env.BASE_URL  || "http://localhost:4000";
-const BASE_URL_AUTH = process.env.BASE_URL || "http://localhost:4000";
+const BASE_URL = "http://localhost:4000/api/users";
+const BASE_URL_AUTH = "http://localhost:4000/api/auth";
 
 interface User {
     firstName: string;
@@ -38,7 +38,7 @@ export const createUser = async (
     data: User
 ): Promise<AxiosResponse<Response>> => {
     try {
-        const response: AxiosResponse<Response> = await axios.post(BASE_URL+'/api/users', {
+        const response: AxiosResponse<Response> = await axios.post(BASE_URL, {
             email: data.email,
             password: data.password,
             firstName: data.firstName,
@@ -56,7 +56,7 @@ export const createUser = async (
 const login = async (data: Login): Promise<AxiosResponse<LoginResponse>> => {
     try {
         const response: AxiosResponse<LoginResponse> = await axios.post(
-            BASE_URL_AUTH + "/api/auth/login",
+            BASE_URL_AUTH + "/login",
             {
                 username: data.username,
                 password: data.password,

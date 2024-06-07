@@ -82,8 +82,11 @@ const Dashboard: React.FC = () => {
     const fetchCryptos = async () => {
       try {
         setIsLoaded(true);
+        console.log("data");
         const data: Crypto[] = await getCryptos();
-
+        console.log("data",data);
+      
+        
         setCryptosFull(
           data.map((crypto, index) => ({ ...crypto, indexId: index + 1 }))
         );

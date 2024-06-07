@@ -18,10 +18,10 @@ export class CryptoService implements OnModuleInit {
   // private readonly baseUrl = 'https://pro-api.coinmarketcap.com/v1/cryptocurrency/listings/latest';
 
 
-  private readonly apiKey = process.env.COINMARKETCAP_API_KEY || '33c5697a-ae41-4e82-86cd-58aeea515057';
+  private readonly apiKey = process.env.COINMARKETCAP_API_KEY || '666a415b-51bd-488d-8d7f-7c89b6bcc780';
   
   private readonly baseUrl = process.env.COINMARKETCAP_BASE_URL || 'https://pro-api.coinmarketcap.com/v1/cryptocurrency/listings/latest';
-  
+
   @WebSocketServer()
   private server: Server;
 
