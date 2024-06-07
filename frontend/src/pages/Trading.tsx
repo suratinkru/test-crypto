@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from "react";
-import { DataGrid, GridColDef, GridRenderCellParams } from "@mui/x-data-grid";
 import io from "socket.io-client";
 import {
   alpha,
@@ -16,7 +15,7 @@ import {
   styled,
   Typography,
 } from "@mui/material";
-import { Line } from "react-chartjs-2";
+
 import { Chart, registerables } from "chart.js";
 import TradeButton from "../components/TradeButton";
 import { Favorite, FavoriteBorder } from "@mui/icons-material";
@@ -80,58 +79,7 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
 
 const Trading: React.FC = () => {
   const [isLoading, setIsLoading] = useState(true);
-  const columns: GridColDef[] = [
-    {
-      field: "indexId",
-      headerName: "#",
-      width: 70,
-    },
-    {
-      field: "name",
-      headerName: "Name",
-      width: 180,
-      renderCell: (params: GridRenderCellParams) => (
-        <div style={{ display: "flex", alignItems: "center" }}>
-          <img
-            src={params.row.logo as string}
-            alt={params.row.name as string}
-            style={{ width: 20, borderRadius: "50%", marginRight: "10px" }}
-          />
-          <div>{params.row.name}</div>
-          <div style={{ marginLeft: "10px" }}>{params.row.symbol}</div>
-        </div>
-      ),
-    },
-    { field: "price", headerName: "Price", type: "number", width: 150 },
-    {
-      field: "market_cap",
-      headerName: "Market Cap",
-      type: "number",
-      width: 180,
-    },
-    {
-      field: "trade",
-      headerName: "Trade",
-      width: 150,
-      renderCell: (params: GridRenderCellParams) => (
-        <TradeButton crypto={params.row as Crypto} />
-      ),
-    },
-    {
-      field: "favorite",
-      headerName: "Favorite",
-      width: 100,
-      renderCell: (params: GridRenderCellParams) => (
-        <IconButton onClick={() => handleFavorite(params.row)}>
-          {params.row.favorite ? (
-            <Favorite style={{ color: "red" }} />
-          ) : (
-            <FavoriteBorder />
-          )}
-        </IconButton>
-      ),
-    },
-  ];
+
 
   const [cryptos, setCryptos] = useState<Crypto[]>([]);
   const [chartData, setChartData] = useState<any>({});
