@@ -18,11 +18,14 @@ Follow these steps to set up and run the application on your local machine.
    git clone https://github.com/suratinkru/test-crypto.git
    cd test-crypto
 
+### Build and start
 
-2. **Build and start the Docker containers
+2. **Build and start the Docker containers**
 
-  ```bash
+   ```bash
    docker compose up -d --build
 
+### Open your browser
+3. **Open your browser and go to**
 
-3. **Open your browser and go to http://localhost:3000.
+- (http://localhost:3000)
