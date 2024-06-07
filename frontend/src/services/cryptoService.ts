@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const BASE_URL = process.env.BASE_URL  || 'http://localhost:4000';
+const BASE_URL = 'http://localhost:4000/api/crypto';
 
 interface Crypto {
   id: string;
@@ -15,7 +15,7 @@ interface Crypto {
 export const getCryptos = async (): Promise<Crypto[]> => {
     try {
         // Send a GET request to the API at http://localhost:4000/crypto
-        const response = await axios.get(BASE_URL+'/api/crypto');
+        const response = await axios.get(BASE_URL);
 
         console.log(response);
         
