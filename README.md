@@ -19,11 +19,10 @@ Follow these steps to set up and run the application on your local machine.
    cd test-crypto
 
 
-Build and start the Docker containers
+2. **Build and start the Docker containers
 
-bash
+  ```bash
+   docker compose up -d --build
 
-docker compose up -d --build
 
-
-Open your browser and go to http://localhost:3000.
+3. **Open your browser and go to http://localhost:3000.
